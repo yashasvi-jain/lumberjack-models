@@ -33,4 +33,4 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.TWINE_PASSWORD }}
       run: |
         pip install twine
-        twine upload dist/*
+        wine upload --repository-url ${{ env.TWINE_REPOSITORY }} dist/*
