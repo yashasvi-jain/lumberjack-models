@@ -85,3 +85,13 @@ class Log(BaseModel):
     """
     The stack trace associated with the log entry, if available.
     """
+
+    filename: str = Field(None, description='The filename where the logger was invoked.')
+    """
+    The filename where the logger was invoked.
+    """
+
+    pathname: str = Field(None, description='The absolute file path for the file where the logger was invoked.')
+    """
+    The absolute file path for the file where the logger was invoked.
+    """
