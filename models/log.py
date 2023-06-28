@@ -1,3 +1,5 @@
+import datetime
+
 from pydantic import BaseModel, Field
 
 
@@ -76,7 +78,7 @@ class Log(BaseModel):
     The name of the machine where the log entry was emitted.
     """
 
-    timestamp: str = Field(..., description="The timestamp when the log was emitted.")
+    timestamp: datetime = Field(..., description="The timestamp when the log was emitted.")
     """
     The timestamp when the log entry was emitted.
     """
