@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-__version__ = '1.2.1'
+__version__ = '0.0.1'
 
 setup(
     name='Models',
