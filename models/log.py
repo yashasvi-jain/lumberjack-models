@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -8,7 +9,7 @@ class Log(BaseModel):
     Represents a log entry.
     """
 
-    logId: int = Field(None, description="Auto-incrementing log identifier")
+    logId: Optional[int] = Field(None, description="Auto-incrementing log identifier")
     """
     The auto-incrementing identifier of the log entry.
     """
@@ -33,37 +34,37 @@ class Log(BaseModel):
     The name of the logger.
     """
 
-    language: str = Field(None, description="The name of the language.")
+    language: Optional[str] = Field(None, description="The name of the language.")
     """
     The name of the language.
     """
 
-    languageVersion: str = Field(None, description="The version of the language.")
+    languageVersion: Optional[str] = Field(None, description="The version of the language.")
     """
     The version of the language.
     """
 
-    applicationName: str = Field(None, description="The name of the application.")
+    applicationName: Optional[str] = Field(None, description="The name of the application.")
     """
     The name of the application associated with the log entry.
     """
 
-    applicationId: str = Field(None, description="The ID of the application.")
+    applicationId: Optional[str] = Field(None, description="The ID of the application.")
     """
     The ID of the application associated with the log entry.
     """
 
-    applicationSuite: str = Field(None, description="The name of the application suite.")
+    applicationSuite: Optional[str] = Field(None, description="The name of the application suite.")
     """
     The name of the application suite associated with the log entry.
     """
 
-    applicationSuiteId: str = Field(None, description="The ID of the application suite.")
+    applicationSuiteId: Optional[str] = Field(None, description="The ID of the application suite.")
     """
     The ID of the application suite associated with the log entry.
     """
 
-    environment: str = Field(None, description="The name of the environment.")
+    environment: Optional[str] = Field(None, description="The name of the environment.")
     """
     The name of the environment in which the log entry was generated.
     """
@@ -83,17 +84,17 @@ class Log(BaseModel):
     The timestamp when the log entry was emitted.
     """
 
-    stackTrace: str = Field(None, description="The stack trace of the log.")
+    stackTrace: Optional[str] = Field(None, description="The stack trace of the log.")
     """
     The stack trace associated with the log entry, if available.
     """
 
-    filename: str = Field(None, description='The filename where the logger was invoked.')
+    filename: Optional[str] = Field(None, description='The filename where the logger was invoked.')
     """
     The filename where the logger was invoked.
     """
 
-    pathname: str = Field(None, description='The absolute file path for the file where the logger was invoked.')
+    pathname: Optional[str] = Field(None, description='The absolute file path for the file where the logger was invoked.')
     """
     The absolute file path for the file where the logger was invoked.
     """
