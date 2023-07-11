@@ -49,7 +49,7 @@ class Log(BaseModel):
     The name of the application associated with the log entry.
     """
 
-    applicationId: Optional[str] = Field(None, description="The ID of the application.")
+    applicationId: Optional[int] = Field(None, description="The ID of the application.")
     """
     The ID of the application associated with the log entry.
     """
@@ -59,7 +59,7 @@ class Log(BaseModel):
     The name of the application suite associated with the log entry.
     """
 
-    applicationSuiteId: Optional[str] = Field(None, description="The ID of the application suite.")
+    applicationSuiteId: Optional[int] = Field(None, description="The ID of the application suite.")
     """
     The ID of the application suite associated with the log entry.
     """

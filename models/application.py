@@ -8,7 +8,7 @@ class Application(BaseModel):
     Represents an application entity.
     """
 
-    appId: Optional[str] = Field(None, description='The application ID.')
+    appId: Optional[int] = Field(None, description='The application ID.')
     """
     The application ID.
     """
