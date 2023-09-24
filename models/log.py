@@ -9,6 +9,11 @@ class Log(BaseModel):
     A Lumberjack log.
     """
 
+    logId: Optional[int] = Field(None, description='Auto-incrementing log identifier')
+    """
+    The auto-incrementing identifier of the log entry.
+    """
+
     logLevel: int = Field(...,
                           description='The numerical representation of the log level.')
     """
