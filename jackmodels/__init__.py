@@ -1,2 +1,2 @@
-from models.application import Application, AppSuite
-from models.log import Log
+from jackmodels.models.application import Application, AppSuite
+from jackmodels.models.log import Log
