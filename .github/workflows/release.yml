@@ -43,6 +43,6 @@ jobs:
         with:
           tag: v${{ steps.get_version.outputs.version }}
           artifacts: "dist/*"
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.LUMBERJACK_GITHUB_TOKEN }}
           draft: false
           prerelease: false
