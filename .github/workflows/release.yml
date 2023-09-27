@@ -17,6 +17,11 @@ jobs:
         with:
           python-version: "3.x"
 
+      - name: Configure git user
+        run: |
+          git config --local user.email "me.yashasvijain@gmail.com"
+          git config --local user.name "yashasvi_jain"
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip setuptools wheel
