@@ -33,7 +33,7 @@ jobs:
       - name: Get version
         id: get_version
         run: |
-          echo "::set-output name=version::$(awk -F= '/__version__/ {print $2}' your_module/__init__.py | tr -d " '")"
+          echo "::set-output name=version::$(awk -F= '/__version__/ {print $2}' jackmodels/__init__.py | tr -d " '")"
 
       - name: Build wheel
         run: python setup.py sdist bdist_wheel
