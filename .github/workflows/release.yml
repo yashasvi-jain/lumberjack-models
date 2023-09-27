@@ -30,6 +30,11 @@ jobs:
       - name: Bump version
         run: bump2version patch
 
+      - name: Get version
+        id: get_version
+        run: |
+          echo "::set-output name=version::$(awk -F= '/__version__/ {print $2}' your_module/__init__.py | tr -d " '")"
+
       - name: Build wheel
         run: python setup.py sdist bdist_wheel
 
@@ -39,8 +44,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: v${{ steps.get_version.outputs.version }}
+          release_name: Release v${{ steps.get_version.outputs.version }}
           draft: false
           prerelease: false
 
