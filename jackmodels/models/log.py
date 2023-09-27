@@ -9,7 +9,74 @@ class Log(BaseModel):
     A Lumberjack log.
     """
 
-    logId: Optional[int] = Field(None, description='Auto-incrementing log identifier')
+    applicationId: Optional[str] = Field(
+        None, description='The ID of the application.')
+    """
+    The ID of the application associated with the log entry.
+    """
+
+    applicationName: Optional[str] = Field(
+        None, description='The name of the application.')
+    """
+    The name of the application associated with the log entry.
+    """
+
+    applicationSuite: Optional[str] = Field(
+        None, description='The name of the application suite.')
+    """
+    The name of the application suite associated with the log entry.
+    """
+
+    applicationSuiteId: Optional[str] = Field(
+        None, description='The ID of the application suite.')
+    """
+    The ID of the application suite associated with the log entry.
+    """
+
+    code: Optional[str] = Field(
+        None, description='The source code where the logger was invoked.')
+    """
+    The source code where the logger was invoked.
+    """
+
+    environment: Optional[str] = Field(
+        None, description='The name of the environment.')
+    """
+    The name of the environment in which the log entry was generated.
+    """
+
+    filename: Optional[str] = Field(
+        None, description='The filename where the logger was invoked.')
+    """
+    The filename where the logger was invoked.
+    """
+
+    filepath: Optional[str] = Field(
+        None, description='The absolute file path for the file the logger was invoked.')
+    """
+    The absolute file path for the file the logger was invoked.
+    """
+
+    language: Optional[str] = Field(
+        None, description='The name of the language.')
+    """
+    The name of the language.
+    """
+
+    languageVersion: Optional[str] = Field(
+        None, description='The version of the language.')
+    """
+    The version of the language.
+    """
+
+    lineno: Optional[int] = Field(
+        None, description='The line number in the file where the logger was invoked.')
+    """
+    The line number in the file where the logger was invoked.
+    """
+
+    logId: Optional[int] = Field(
+        None, description='Auto-incrementing log identifier')
     """
     The auto-incrementing identifier of the log entry.
     """
@@ -35,64 +102,10 @@ class Log(BaseModel):
     The name of the logger.
     """
 
-    language: Optional[str] = Field(
-        None, description='The name of the language.')
-    """
-    The name of the language.
-    """
-
-    languageVersion: Optional[str] = Field(
-        None, description='The version of the language.')
-    """
-    The version of the language.
-    """
-
-    applicationName: Optional[str] = Field(
-        None, description='The name of the application.')
-    """
-    The name of the application associated with the log entry.
-    """
-
-    applicationId: Optional[str] = Field(
-        None, description='The ID of the application.')
-    """
-    The ID of the application associated with the log entry.
-    """
-
-    applicationSuite: Optional[str] = Field(
-        None, description='The name of the application suite.')
-    """
-    The name of the application suite associated with the log entry.
-    """
-
-    applicationSuiteId: Optional[str] = Field(
-        None, description='The ID of the application suite.')
-    """
-    The ID of the application suite associated with the log entry.
-    """
-
-    environment: Optional[str] = Field(
-        None, description='The name of the environment.')
-    """
-    The name of the environment in which the log entry was generated.
-    """
-
-    username: str = Field(...,
-                          description='The username of the user who emitted the log.')
-    """
-    The username of the user who emitted the log entry.
-    """
-
     machineName: str = Field(...,
                              description='The machine name where the log was emitted.')
     """
     The name of the machine where the log entry was emitted.
-    """
-
-    timestamp: datetime = Field(...,
-                                description='The timestamp when the log was emitted.')
-    """
-    The timestamp when the log entry was emitted.
     """
 
     stackTrace: Optional[str] = Field(
@@ -101,26 +114,14 @@ class Log(BaseModel):
     The stack trace associated with the log entry, if available.
     """
 
-    filename: Optional[str] = Field(
-        None, description='The filename where the logger was invoked.')
+    timestamp: datetime = Field(...,
+                                description='The timestamp when the log was emitted.')
     """
-    The filename where the logger was invoked.
-    """
-
-    filepath: Optional[str] = Field(
-        None, description='The absolute file path for the file the logger was invoked.')
-    """
-    The absolute file path for the file the logger was invoked.
+    The timestamp when the log entry was emitted.
     """
 
-    lineno: Optional[int] = Field(
-        None, description='The line number in the file where the logger was invoked.')
+    username: str = Field(...,
+                          description='The username of the user who emitted the log.')
     """
-    The line number in the file where the logger was invoked.
-    """
-
-    code: Optional[str] = Field(
-        None, description='The source code where the logger was invoked.')
-    """
-    The source code where the logger was invoked.
+    The username of the user who emitted the log entry.
     """
