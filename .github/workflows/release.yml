@@ -39,22 +39,10 @@ jobs:
         run: python setup.py sdist bdist_wheel
 
       - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.LUMBERJACK_GITHUB_TOKEN }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: v${{ steps.get_version.outputs.version }}
-          release_name: Release v${{ steps.get_version.outputs.version }}
+          tag: v${{ steps.get_version.outputs.version }}
+          artifacts: "dist/*"
+          token: ${{ secrets.GITHUB_TOKEN }}
           draft: false
           prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./dist/lumberjack-models-${{ github.ref }}.whl
-          asset_name: lumberjack-models-${{ github.ref }}.whl
-          asset_content_type: application/zip
